@@ -1,0 +1,218 @@
+{
+    "package": "CoworkingMap",
+    "tagline": "CoworkingMap API",
+    "description": "Web app where you can find and filtering coworking in all world.",
+    "image": "https:\/\/logo.clearbit.com\/coworkingmap.org",
+    "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-CoworkingMap-Package",
+    "keywords": [
+        "API",
+        "Coworking",
+        "Map"
+    ],
+    "accounts": {
+        "domain": "coworkingmap.org",
+        "credentials": [
+            "password",
+            "username"
+        ]
+    },
+    "blocks": [
+        {
+            "name": "getAccessToken",
+            "description": "Coworkingmap.org \u2019s API uses JSON Web Token (JWT) for authentication. If you want to learn more about this, visit jwt.io. All requests will be authenticated by a token which expires within one week. ",
+            "args": [
+                {
+                    "name": "password",
+                    "type": "credentials",
+                    "info": "Your account password from coworkingmap.org.",
+                    "required": true
+                },
+                {
+                    "name": "username",
+                    "type": "credentials",
+                    "info": "Your account username from coworkingmap.org.",
+                    "required": true
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/coworkingmap.org\/wp-json\/jwt-auth\/v1\/token\/",
+                "method": "post",
+                "requestParameters": [
+                    {
+                        "type": "query",
+                        "parameters": [
+                            "username",
+                            "password"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "checkTokenDateExpiration",
+            "description": "To check the expiration date of your token.",
+            "args": [
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Your accessToken from getAccessToken endpoint.",
+                    "required": true
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/coworkingmap.org\/wp-json\/jwt-auth\/v1\/token\/validate\/",
+                "method": "post",
+                "headers": {
+                    "Authorization": "Bearer {$data['accessToken']}"
+                },
+                "requestParameters": []
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCoworkingsByCountry",
+            "description": "Filtering by country.",
+            "args": [
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Your accessToken from getAccessToken endpoint.",
+                    "required": true
+                },
+                {
+                    "name": "country",
+                    "type": "String",
+                    "info": "Country for search coworkings.",
+                    "required": true
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/coworkingmap.org\/wp-json\/jwt-auth\/v1\/token\/validate\/{$data['country']}",
+                "method": "post",
+                "headers": {
+                    "Authorization": "Bearer {$data['accessToken']}"
+                },
+                "requestParameters": []
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCoworkingsByCity",
+            "description": "Filtering by city.",
+            "args": [
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Your accessToken from getAccessToken endpoint.",
+                    "required": true
+                },
+                {
+                    "name": "country",
+                    "type": "String",
+                    "info": "Country for search coworkings.",
+                    "required": true
+                },
+                {
+                    "name": "city",
+                    "type": "String",
+                    "info": "City for search coworkings.",
+                    "required": true
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/coworkingmap.org\/wp-json\/jwt-auth\/v1\/token\/validate\/{$data['country']}\/{$data['city']}",
+                "method": "post",
+                "headers": {
+                    "Authorization": "Bearer {$data['accessToken']}"
+                },
+                "requestParameters": []
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCoworkingsByName",
+            "description": "Filtering by space name.",
+            "args": [
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Your accessToken from getAccessToken endpoint.",
+                    "required": true
+                },
+                {
+                    "name": "country",
+                    "type": "String",
+                    "info": "Country for search coworkings.",
+                    "required": true
+                },
+                {
+                    "name": "city",
+                    "type": "String",
+                    "info": "City for search coworkings.",
+                    "required": true
+                },
+                {
+                    "name": "spaceName",
+                    "type": "String",
+                    "info": "Space name for search coworking.",
+                    "required": true
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/coworkingmap.org\/wp-json\/jwt-auth\/v1\/token\/validate\/{$data['country']}\/{$data['city']}\/{$data['spaceName']}",
+                "method": "post",
+                "headers": {
+                    "Authorization": "Bearer {$data['accessToken']}"
+                },
+                "requestParameters": []
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        }
+    ]
+}
