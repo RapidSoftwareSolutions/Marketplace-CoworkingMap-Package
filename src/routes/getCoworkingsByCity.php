@@ -22,7 +22,7 @@ $app->post('/api/CoworkingMap/getCoworkingsByCity', function ($request, $respons
     
 
     $client = $this->httpClient;
-    $query_str = "https://coworkingmap.org/wp-json/jwt-auth/v1/token/validate/{$data['country']}/{$data['city']}";
+    $query_str = "https://coworkingmap.org/wp-json/spaces/{$data['country']}/{$data['city']}";
 
     
 
@@ -31,7 +31,7 @@ $app->post('/api/CoworkingMap/getCoworkingsByCity', function ($request, $respons
      
 
     try {
-        $resp = $client->post($query_str, $requestParams);
+        $resp = $client->get($query_str, $requestParams);
         $responseBody = $resp->getBody()->getContents();
 
         if(in_array($resp->getStatusCode(), ['200', '201', '202', '203', '204'])) {

@@ -101,13 +101,13 @@
                 {
                     "name": "country",
                     "type": "String",
-                    "info": "Country for search coworkings.",
+                    "info": "Country for search coworkings.Example - ukraine.",
                     "required": true
                 }
             ],
             "vendorRequest": {
-                "url": "https:\/\/coworkingmap.org\/wp-json\/jwt-auth\/v1\/token\/validate\/{$data['country']}",
-                "method": "post",
+                "url": "https://coworkingmap.org/wp-json/spaces/\/{$data['country']}",
+                "method": "get",
                 "headers": {
                     "Authorization": "Bearer {$data['accessToken']}"
                 },
@@ -137,7 +137,7 @@
                 {
                     "name": "country",
                     "type": "String",
-                    "info": "Country for search coworkings.",
+                    "info": "Country for search coworkings.Example - ukraine.",
                     "required": true
                 },
                 {
@@ -148,8 +148,8 @@
                 }
             ],
             "vendorRequest": {
-                "url": "https:\/\/coworkingmap.org\/wp-json\/jwt-auth\/v1\/token\/validate\/{$data['country']}\/{$data['city']}",
-                "method": "post",
+                "url": "https://coworkingmap.org/wp-json/spaces/\/{$data['country']}\/{$data['city']}",
+                "method": "get",
                 "headers": {
                     "Authorization": "Bearer {$data['accessToken']}"
                 },
@@ -179,7 +179,7 @@
                 {
                     "name": "country",
                     "type": "String",
-                    "info": "Country for search coworkings.",
+                    "info": "Country for search coworkings.Example - united-kingdom.",
                     "required": true
                 },
                 {
@@ -196,8 +196,8 @@
                 }
             ],
             "vendorRequest": {
-                "url": "https:\/\/coworkingmap.org\/wp-json\/jwt-auth\/v1\/token\/validate\/{$data['country']}\/{$data['city']}\/{$data['spaceName']}",
-                "method": "post",
+                "url": "https://coworkingmap.org/wp-json/spaces/\/{$data['country']}\/{$data['city']}\/{$data['spaceName']}",
+                "method": "get",
                 "headers": {
                     "Authorization": "Bearer {$data['accessToken']}"
                 },

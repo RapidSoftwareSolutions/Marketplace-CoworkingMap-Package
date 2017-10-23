@@ -38,7 +38,7 @@ Filtering by country.
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Your accessToken from getAccessToken endpoint.
-| country    | String| Country for search coworkings.
+| country    | String| Country for search coworkings.Example - ukraine.
 
 ## CoworkingMap.getCoworkingsByCity
 Filtering by city.
@@ -46,7 +46,7 @@ Filtering by city.
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Your accessToken from getAccessToken endpoint.
-| country    | String| Country for search coworkings.
+| country    | String| Country for search coworkings.Example - ukraine.
 | city       | String| City for search coworkings.
 
 ## CoworkingMap.getCoworkingsByName
@@ -55,7 +55,7 @@ Filtering by space name.
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Your accessToken from getAccessToken endpoint.
-| country    | String| Country for search coworkings.
+| country    | String| Country for search coworkings.Example - united-kingdom.
 | city       | String| City for search coworkings.
 | spaceName  | String| Space name for search coworking.
 
