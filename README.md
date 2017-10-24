@@ -18,7 +18,7 @@ Web app where you can find and filtering coworking in all world.
  |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ``` 
  
 ## CoworkingMap.getAccessToken
-Coworkingmap.org ’s API uses JSON Web Token (JWT) for authentication. If you want to learn more about this, visit jwt.io. All requests will be authenticated by a token which expires within one week. 
+Coworkingmap.org ’s API uses JSON Web Token (JWT) for authentication. If you want to learn more about this, visit [jwt.io](https://jwt.io/). All requests will be authenticated by a token which expires within one week. 
 
 | Field   | Type       | Description
 |---------|------------|----------
@@ -57,5 +57,5 @@ Filtering by space name.
 | accessToken| String| Your accessToken from getAccessToken endpoint.
 | country    | String| Country for search coworkings.Example - united-kingdom.
 | city       | String| City for search coworkings.
-| spaceName  | String| Space name for search coworking.
+| spaceName  | String| Space name for search coworking. Example - Club-Workspace-London-Bridge .
 

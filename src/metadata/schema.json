@@ -19,7 +19,7 @@
     "blocks": [
         {
             "name": "getAccessToken",
-            "description": "Coworkingmap.org \u2019s API uses JSON Web Token (JWT) for authentication. If you want to learn more about this, visit jwt.io. All requests will be authenticated by a token which expires within one week. ",
+            "description": "Coworkingmap.org \u2019s API uses JSON Web Token (JWT) for authentication. If you want to learn more about this, visit https://jwt.io/. All requests will be authenticated by a token which expires within one week. ",
             "args": [
                 {
                     "name": "password",
@@ -191,7 +191,7 @@
                 {
                     "name": "spaceName",
                     "type": "String",
-                    "info": "Space name for search coworking.",
+                    "info": "Space name for search coworking.Example - Club-Workspace-London-Bridge",
                     "required": true
                 }
             ],
